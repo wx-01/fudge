@@ -5,6 +5,7 @@ import Admin from './pages/Admin'
 import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { Route, Routes } from 'react-router-dom'
 
 
 
