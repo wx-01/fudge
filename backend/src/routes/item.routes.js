@@ -1,5 +1,4 @@
 import express from "express";
-import { protectedRoute } from "../middleware/auth.middleware";
 import {
   createItem,
   delteeItem,
