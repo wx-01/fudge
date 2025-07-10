@@ -4,6 +4,6 @@ import { createCategory, deleteCategory, getCategory } from '../controllers/cate
 const router = express.Router();
 
 router.get("/", getCategory);
-router.post('/',protectedRoute, createCategory);
-router.delete("/:id", protectedRoute, deleteCategory);
+router.post('/', createCategory);
+router.delete("/:id", deleteCategory);
 export default router;

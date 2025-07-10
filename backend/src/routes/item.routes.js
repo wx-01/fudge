@@ -10,6 +10,6 @@ const router = express.Router();
 
 router.get("/:id", getItemsByCategoryId);
 router.get("/", getAllItems);
-router.post("/:id", protectedRoute, createItem);
-router.delete("/:id", protectedRoute, delteeItem);
+router.post("/:id",  createItem);
+router.delete("/:id", delteeItem);
 export default router;
