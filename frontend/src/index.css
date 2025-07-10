@@ -22,18 +22,18 @@
 
   }
 
-  * {
+  /* * {
     @apply border-border;
-  }
+  } */
 
   html {
     @apply scroll-smooth;
   }
 
-  body {
+  /* body {
     @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
-  }
+  } */
 }
 
 @utility container {
