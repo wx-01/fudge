@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container flex items-center justify-between px-0 border-t-3 border-t-fudge-500">
         <a
           className="text-3xl text-fudge-500 agbalumo-regular font-bold flex items-center p-3 pt-1 border-t-0 border-3 border-fudge-500 rounded-b-2xl hover:text-white hover:bg-fudge-500 transition-all ease-in-out duration-300"
-          href="#hero "
+          href="/"
         >
           <h1 className="">FUDGE</h1>
         </a>
@@ -32,9 +32,7 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex md:hidden">
-          <button className="text-3xl text-fudge-500 agbalumo-regular font-bold flex items-center p-3 pt-1 border-t-0 border-3 border-fudge-500 rounded-b-2xl hover:text-white hover:bg-fudge-500 transition-all ease-in-out duration-300">
-            
-          </button>
+          <button className="text-3xl text-fudge-500 agbalumo-regular font-bold flex items-center p-3 pt-1 border-t-0 border-3 border-fudge-500 rounded-b-2xl hover:text-white hover:bg-fudge-500 transition-all ease-in-out duration-300"></button>
         </div>
       </div>
     </nav>
