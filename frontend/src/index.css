@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-
   --color-background: hsl(var(--background));
- --color-text-primary: hsl(var(--text-primary));
+  --color-text-primary: hsl(var(--text-primary));
 
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
@@ -13,25 +12,23 @@
 
 @layer base {
   :root {
-    --background:240, 250, 255;
-    --text-primary:155, 17, 50;
-    --card:255, 255, 255;
+    --background: 200, 100%, 97%;
+    --text-primary: 346, 80%, 33%;
+    --card: 0, 0%, 100%;
 
-    --primary:255, 120, 62;
-    --primary-foreground: 255, 255, 255;
-
+    --primary: 178, 85%, 70%;
+    --primary-foreground: 0, 0%, 100%;
   }
 
   * {
-    @apply border-border;
+    padding: 0;
   }
-
   html {
     @apply scroll-smooth;
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-300;
+    @apply bg-background transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -61,10 +58,34 @@
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
 }
 
-
 #root {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
   text-align: center;
+}
+
+@theme {
+  --color-fudge-50: oklch(82.44% 0.107 358.89);
+  --color-fudge-100: oklch(81.52% 0.108 8.16);
+  --color-fudge-200: oklch(79.05% 0.121 19.52);
+  --color-fudge-300: oklch(76.51% 0.141 34.08);
+  --color-fudge-400: oklch(73.43% 0.179 54.4);
+  --color-fudge-500: oklch(68.53% 0.207 41.94);
+  --color-fudge-600: oklch(63.39% 0.252 27.09);
+  --color-fudge-700: oklch(57.35% 0.229 10.28);
+  --color-fudge-800: oklch(51% 0.207 358.71);
+  --color-fudge-900: oklch(45.64% 0.19 350.3);
+  --color-fudge-950: oklch(42.12% 0.18 343.85);
+}
+.agbalumo-regular {
+  font-family: "Agbalumo", system-ui;
+
+  font-style: normal;
+}
+.literata-regular {
+  font-family: "Literata", serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
 }
