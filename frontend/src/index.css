@@ -20,17 +20,17 @@
     --primary-foreground: 0, 0%, 100%;
   }
 
-  * {
+  /* * {
     padding: 0;
-  }
+  } */
   html {
     @apply scroll-smooth;
   }
 
-  body {
+  /* body {
     @apply bg-background transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
-  }
+  } */
 }
 
 @utility container {
@@ -80,12 +80,10 @@
 }
 .agbalumo-regular {
   font-family: "Agbalumo", system-ui;
-
   font-style: normal;
 }
 .literata-regular {
   font-family: "Literata", serif;
   font-optical-sizing: auto;
-
   font-style: normal;
 }

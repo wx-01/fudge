@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CategoryTab from "../components/Admin/CategoryTab.jsx";
 import StoryTab from "../components/Admin/Itme.jsx";
