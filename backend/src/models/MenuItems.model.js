@@ -16,8 +16,10 @@ const menuItemSchema = new mongoose.Schema({
     ref: "MenuCategory",
     required: true,
   },
-  isFeatured:false,
-  
+  isFeatured: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 export default mongoose.model("MenuItem", menuItemSchema);
