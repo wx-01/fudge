@@ -4,11 +4,11 @@ import {
   delteeItem,
   getAllItems,
   getItemsByCategoryId,
-} from "../controllers/item.controller";
+} from "../controllers/item.controller.js";
 const router = express.Router();
 
 router.get("/:id", getItemsByCategoryId);
 router.get("/", getAllItems);
-router.post("/:id",  createItem);
+router.post("/:id", createItem);
 router.delete("/:id", delteeItem);
 export default router;

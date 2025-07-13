@@ -1,4 +1,4 @@
-import MenuCategory from "../models/MenuCategory.model";
+import MenuCategory from "../models/MenuCategory.model.js";
 
 // ==============geting=================
 

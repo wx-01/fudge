@@ -15,8 +15,8 @@ export default function AdminTabsPanel() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto mt-10 px-4 space-y-8">
-      <h1 className="text-3xl font-bold text-center text-gray-800 dark:text-white">
+    <div className="w-full max-w-4xl mx-auto px-4 space-y-8 pt-20">
+      <h1 className="text-3xl font-bold text-center text-gray-800 dark:text-fudge-500">
         Admin Dashboard
       </h1>
 
@@ -40,7 +40,7 @@ export default function AdminTabsPanel() {
       </div>
 
       {/* Content Box */}
-      <div className="min-h-[300px] bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl p-6 shadow">
+      <div className="min-h-screen bg-white dark:bg-blue-100 border border-gray-300 dark:border-gray-700 rounded-xl p-6 shadow">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
