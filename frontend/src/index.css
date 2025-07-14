@@ -87,17 +87,3 @@
   font-optical-sizing: auto;
   font-style: normal;
 }
-.auto-x-scroll {
-  background-repeat: repeat-x;
-  background-position: 0 0;
-  animation: scrollBackground 20s linear infinite;
-}
-
-@keyframes scrollBackground {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-}
