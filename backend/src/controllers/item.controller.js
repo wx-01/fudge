@@ -3,7 +3,7 @@ import MenuItem from "../models/MenuItems.model.js";
 // ================geting=================
 
 export const getItemsByCategoryId = async (req, res) => {
-  const { CategoryId } = req.params;
+  const { id: CategoryId } = req.params;
   if (!CategoryId) {
     return res.status(404).json({ message: "Not found CategoryId" });
   }
@@ -28,15 +28,10 @@ export const getItemsByCategoryId = async (req, res) => {
 
 export const getAllItems = async (req, res) => {
   try {
-    const items = await MenuItem.find().populate(
-      "category",
-      "name"
-    );
+    const items = await MenuItem.find().populate("category", "name");
 
     if (items.length === 0) {
-      return res
-        .status(404)
-        .json({ message: "items not found" });
+      return res.status(404).json({ message: "items not found" });
     }
 
     res.status(200).json({ items });
@@ -50,29 +45,41 @@ export const getAllItems = async (req, res) => {
 
 export const createItem = async (req, res) => {
   const { image, name, description, price } = req.body;
-  const { categoryId } = req.params;
-  if (!image || !name || !description || !categoryId || !price) {
-    return res.status(400).json({ message: "All fields are required" });
+  const { id: categoryId } = req.params;
+  if (!name || !description || !categoryId || !price) {
+    return res.status(400).json({
+      message: "Name, description, price and categoryId are required",
+    });
   }
 
   try {
-    const itme = new MenuItem({
+    // Check if an item with the same name already exists
+    const existingItem = await MenuItem.findOne({ name, category: categoryId });
+    if (existingItem) {
+      return res
+        .status(400)
+        .json({
+          message: "Item with this name already exists in the category",
+        });
+    }
+
+    const item = new MenuItem({
       image,
       name,
       description,
       price,
       category: categoryId,
     });
-    await itme.save();
-    const populatedItem = await MenuItem.findById(itme._id).populate(
+    await item.save();
+    const populatedItem = await MenuItem.findById(item._id).populate(
       "category"
     );
 
     res
       .status(201)
-      .json({ message: "item created successfully", MenuItem: populatedItem });
+      .json({ message: "Item created successfully", MenuItem: populatedItem });
   } catch (error) {
-    res.status(500).json({ message: "error in creating item", error });
+    res.status(500).json({ message: "Error in creating item", error });
   }
 };
 
