@@ -16,17 +16,30 @@ export const getCategory = async (req, res) => {
 export const createCategory = async (req, res) => {
   const { name } = req.body;
 
+  console.log("Received data:", req.body); // Log the received data
+
   if (!name) {
-    return res.status(400).json({ message: "name required" });
+    return res.status(400).json({ message: "Name is required" });
   }
+
   try {
+    // Check if a category with the same name already exists
+    const existingCategory = await MenuCategory.findOne({ name });
+    if (existingCategory) {
+      return res
+        .status(400)
+        .json({ message: "Category with this name already exists" });
+    }
+
     const category = new MenuCategory({
       name,
     });
     await category.save();
-    res.status(201).json({ message: "category created successfully", Type });
+    res
+      .status(201)
+      .json({ message: "Category created successfully", category });
   } catch (error) {
-    res.status(500).json({ message: "error in creating category", error });
+    res.status(500).json({ message: "Error in creating category", error });
   }
 };
 
